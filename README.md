@@ -1,6 +1,6 @@
 # vue-electron-music
 
-> nodejs、vue、electron制作的网易云音乐客户端(MacOs)版，没有在Windows运行过，所以样式可能多点差异，时间不足，有空再更新
+> nodejs、vue、electron制作的网易云音乐客户端(MacOs)版，目前没有在Windows运行过，所以样式可能有点差异，时间不足，有空再更新。
 
 [运行效果预览视频](http://v.youku.com/v_show/id_XMjk2MzYxODUyMA==.html?spm=a2hzp.8244740.0.0)
 
