@@ -1,0 +1,36 @@
+@import "src/renderer/assets/scss/var.scss";
+.toast-mask {
+  position: fixed;
+  z-index: 1024;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 16px;
+  background-color: transparent;
+  pointer-events: none;
+}
+.toast {
+  @include line-height(60px);
+  padding: 0 24px;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  border-radius: 5px;
+  width: auto;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+}
+
+.toast-enter-active,
+.toast-leave-active {
+  transition: opacity 0.2s;
+  backface-visibility: hidden;
+}
+
+.toast-enter,
+.toast-leave-active {
+  opacity: 0;
+}

@@ -1,0 +1,51 @@
+@import "src/renderer/assets/scss/var.scss";
+.mv {
+  padding: 30px;
+  width: 100%;
+  .list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .item {
+    width: 150px;
+  }
+  .coverImg {
+    display: flex;
+    height: 90px;
+    background-size: 100%;
+    background-position: center center;
+    position: relative;
+    color: $white;
+    font-size: $font-size-base;
+    span {
+      @include position-all;
+      padding: 5px;
+    }
+    .playCount {
+      bottom: auto;
+      text-align: right;
+      background: -webkit-gradient(linear,right center,center top,from(rgba(0,0,0,1)),to(rgba(0,0,0,0)));
+    }
+    .time {
+      top: auto;
+      bottom: 0;
+      text-align: left;
+    }
+  }
+  .desc {
+    font-size: 14px;
+    font-weight: normal;
+    .name {
+      display: inline-block;
+      padding: 5px 0;
+    }
+    .artist {
+      font-size: $font-size-base;
+      color: $grey-light;
+    }
+  }
+}

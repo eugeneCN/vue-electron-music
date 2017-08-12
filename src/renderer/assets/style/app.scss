@@ -1,0 +1,81 @@
+@import "src/renderer/assets/scss/var.scss";
+.bar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  height: $head-height;
+  background-color: #f7f7f8;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.bar-header {
+  top: 0;
+}
+.bar-footer {
+  bottom: 0;
+}
+.views {
+  @include position-all;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.bar-footer ~ .views {
+  bottom: $play-bar-height;
+}
+.bar-header ~ .views {
+  top: $head-height;
+}
+.page {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.scrollBar {
+  overflow-y: scroll !important;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 500;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0,0.05);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1000px;
+  background-color: rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0,0,0,0.3);
+}
+
+.radius-border {
+  position: relative;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .radius-border:before {
+    content: '';
+    pointer-events: none;
+    box-sizing: border-box;
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+    top: 0;
+    /* 改变这个值 100% 就是我们平常的border-radius 50% */
+    border-radius: 100%;
+    border: 1px solid #999;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+  }
+}
+* {
+  background-color: rgba(0,0,0, 0);
+}

@@ -1,0 +1,80 @@
+@import "src/renderer/assets/scss/function.scss";
+/**/
+//-----------------------------------------------------
+// var scss 2017年07月04日19:36:15
+//-----------------------------------------------------
+// ----------------------------------------------------
+// Colors
+//-----------------------------------------------------
+$primary: #20a0ff;
+$success: #13ce66;
+$warning: #f7ba2a;
+$danger: #ff4949;
+$info: #50BFFF;
+$red: #b72712;
+$red-light: #d43c33;
+$red-lighter: rgba($red, 0.12);
+$white: #fafafa;
+$black: #000;
+$grey: #636363;
+$grey-main: #f5f5f5;
+$grey-light: #c5c5c5;
+$grey-lighter: #d1d1d1;
+/**/
+// ----------------------------------------------------
+// Font Colors
+//-----------------------------------------------------
+$font-light: #999999;
+$font: #636363;
+$font-dark: #5e6a76;
+$font-darker: #222222;
+$font-gary: #bbbbbb;
+$font-red: #d43c33;
+
+/**/
+// ----------------------------------------------------
+// Font size
+//-----------------------------------------------------
+$font-size-big: 18px;
+$font-size-large: 16px;
+$font-size-head: 13px;
+$font-size-base: 12px;
+/**/
+// ----------------------------------------------------
+// bar Width
+//-----------------------------------------------------
+$nav-width: 200px;
+$head-height: 60px;
+$play-bar-height: 65px;
+
+/**/
+// ----------------------------------------------------
+// 主体混合函数
+//-----------------------------------------------------
+@mixin min-height($height) {
+  min-height: $height;
+  height: auto;
+}
+@mixin line-height($height) {
+  height: $height;
+  line-height: $height;
+}
+@mixin case($box) {
+  width: $box;
+  height: $box;
+}
+@mixin horizontal-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin position-all {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+@mixin transition-set($args) {
+  -webkit-transition: $args;
+  transition: $args;
+}

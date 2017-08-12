@@ -1,0 +1,26 @@
+@import "src/renderer/assets/scss/var.scss";
+
+.home {
+  .nav {
+    @include line-height(42px);
+    text-align: center;
+    font-size: 0;
+    border-bottom: 1px solid $grey-light;
+    a {
+      margin: 0 34px;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 14px;
+      color: $font;
+      &.active {
+        color: $red;
+      }
+    }
+  }
+  .up {
+    padding: 100px 0;
+    text-align: center;
+    color: $font-light;
+    font-size: $font-size-base;
+  }
+}

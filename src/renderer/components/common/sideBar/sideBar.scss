@@ -1,0 +1,206 @@
+@import "src/renderer/assets/scss/var.scss";
+
+.sidebar {
+  // -webkit-font-smoothing: antialiased;
+
+  position: relative;
+  width: $nav-width;
+  height: 100%;
+  border-right: 1px solid $grey-lighter;
+  z-index: 11;
+  background-color: $white;
+  h4 {
+    font-size: $font-size-base;
+    color: $font;
+    @include line-height(24px);
+    padding: 0 10px;
+    margin: 10px 0 5px;
+    &:first-child {
+      margin: 0;
+    }
+  }
+  ul {
+    font-size: $font-size-base;
+    li {
+      overflow: hidden;
+    }
+    a {
+      display: block;
+      color: $black;
+      font-size: $font-size-head;
+      text-decoration: none;
+      padding-left: 20px;
+      position: relative;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      @include line-height(30px);
+      &.active {
+        background-color: rgba($grey, 0.15);
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 3px;
+          height: 22px;
+          margin: 4px 0;
+          background-color: $red-light;
+        }
+      }
+
+      .icon {
+        float: left;
+        display: inline-block;
+        width: 26px;
+        height: 30px;
+        @include line-height(30px);
+        vertical-align: middle;
+        &:after {
+          content: '';
+          display: inline-block;
+          background: url('./assets/list.svg') no-repeat;
+          background-size: 100%;
+          width: 18px;
+          margin: 5px 0;
+          height: 20px;
+        }
+        &.music:after {
+          background: url('./assets/music.svg') no-repeat;
+          background-size: 100%;
+          width: 24px;
+          margin: 3px -2px;
+        }
+        &.fm:after {
+          background: url('./assets/fm.svg') no-repeat;
+          background-size: 100%;
+          width: 28px;
+          margin: 6px -5px;
+        }
+        &.mv:after {
+          background: url('./assets/mv.svg') no-repeat;
+          background-size: 100%;
+        }
+        &.friend:after {
+          background: url('./assets/friend.svg') no-repeat;
+          background-size: 100%;
+        }
+        &.iTunes:after {
+          background: url('./assets/iTunes.svg') no-repeat;
+          background-size: 100%;
+        }
+        &.download:after {
+          background: url('./assets/download.svg') no-repeat;
+          background-size: 100%;
+          width: 18px;
+          margin: 4px 0;
+        }
+        &.likes:after {
+          background: url('./assets/likes.svg') no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+
+  .play-info-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    border-top: 1px solid $grey-lighter;
+    background-color: $white;
+    .pic {
+      @include case(60px);
+      position: relative;
+      margin: 10px;
+      border-radius: 4px;
+      overflow: hidden;
+      float: left;
+      border: 1px solid #e6e6e6;
+      img {
+        display: block;
+        @include case(100%);
+        vertical-align: middle;
+      }
+      .shows {
+        display: inline-block;
+        background: url('./assets/shows.svg') no-repeat;
+        background-size: 100%;
+        @include position-all;
+        width: 24px;
+        height: 24px;
+        margin: 20px;
+        z-index: 100;
+        opacity: 0;
+      }
+    }
+    .bar-content {
+      overflow: hidden;
+      padding-right: 25px;
+
+      .share {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 25px;
+      }
+
+      .infos {
+        padding: 20px 0;
+
+        span {
+          display: block;
+          @include line-height(20px);
+          vertical-align: middle;
+        }
+      }
+
+      .name {
+        font-size: 15px;
+      }
+
+      .singer {
+        font-size: $font-size-base;
+        color: $font;
+      }
+    }
+    &:hover {
+      .pic:after {
+        content: '';
+        @include position-all;
+        background-color: rgba($black, 0.4);
+      }
+      .pic .shows {
+        opacity: 1;
+      }
+    }
+  }
+
+  .nav-scrollBar {
+    overflow-y: scroll !important;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 500;
+  }
+  .nav-scrollBar::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0.0);
+  }
+  .nav-scrollBar::-webkit-scrollbar {
+    width: 3px;
+  }
+  .nav-scrollBar::-webkit-scrollbar-thumb {
+    border-radius: 1000px;
+    background-color: rgba(0,0,0,0.2);
+  }
+  .nav-scrollBar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0,0,0,0.3);
+  }
+}

@@ -1,0 +1,29 @@
+@import "src/renderer/assets/scss/var.scss";
+
+.header-bar-button {
+  position: relative;
+  font-size: 0;
+  z-index: 200;
+  padding: 3px 5px;
+  .btn {
+    -webkit-app-region: no-drag;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    border: none;
+    box-shadow: 0 0 1px rgba(0,0,0,0.3);
+    @include case(12px);
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+    &.closes {
+      background-color: #fc625d;
+    }
+    &.minimize {
+      background-color: #fdbc40;
+    }
+    &.maximize {
+      background-color: #34c84a;
+    }
+  }
+}

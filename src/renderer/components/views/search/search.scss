@@ -1,0 +1,55 @@
+@import "src/renderer/assets/scss/var.scss";
+
+.search-main {
+  background-color: #fafafa;
+  .keywords {
+    @include line-height(54px);
+    font-size: $font-size-base;
+    padding: 0 30px;
+    span {
+      color: #2b77cd;
+    }
+  }
+
+  .search-nav {
+    border-bottom: 2px solid $red;
+    padding: 0 30px;
+    font-size: 0;
+    li {
+      display: inline-block;
+    }
+    a {
+      display: inline-block;
+      width: 80px;
+      text-align: center;
+      font-size: $font-size-head;
+      text-decoration: none;
+      border: 1px solid #c8c8c8;
+      border-bottom: none;
+      background-color: #f4f4f4;
+      margin-right: 5px;
+      @include line-height(32px);
+      padding: 0 20px;
+      color: $black;
+      &.active {
+        background-color: $red-light;
+        border-color: $red;
+        color: $white;
+      }
+    }
+  }
+
+  .loading {
+    text-align: center;
+    padding: 50px;
+  }
+
+  .not-data {
+    font-size: $font-size-base;
+    padding: 100px 0;
+    text-align: center;
+    span {
+      color: #2b77cd;
+    }
+  }
+}

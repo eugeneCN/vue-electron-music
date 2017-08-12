@@ -1,0 +1,128 @@
+@import "src/renderer/assets/scss/var.scss";
+.banner {
+  padding: 20px;
+  position: relative;
+  .wrap {
+    width: 62%;
+    height: 100%;
+    min-height: 175px;
+    max-height: 250px;
+    margin: 0 auto;
+    perspective: 1000px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tag {
+    display: inline-block;
+    background-color: $red;
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: $font-size-base;
+    border-radius: 1000px 0 0 1000px;
+    padding: 4px 10px;
+    margin-right: -5px;
+    margin-bottom: 5px;
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-bottom: 5px solid $red;
+      border-right: 5px solid transparent;
+      margin-top: -5px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.4s;
+    opacity: 0;
+    z-index: 1;
+    &:after {
+      display: block;
+      content: '';
+      @include position-all;
+      background-color: rgba($black,.5);
+      border-radius: 5px;
+    }
+
+    &.o {
+      opacity: 1;
+      z-index: 5;
+      &:after {
+        opacity: 0;
+      }
+    }
+
+    &.l {
+      opacity: 1;
+      z-index: 3;
+      transform: rotateY(65deg) translateX(-30%) translateZ(-185px) scale(0.7);
+    }
+
+    &.r {
+      opacity: 1;
+      z-index: 3;
+      transform: rotateY(-65deg) translateX(30%) translateZ(-185px) scale(0.7);
+      .tag:after {
+        border-bottom: 5px solid rgba($black,.9);
+      }
+      .tag:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5px;
+        height: 100%;
+        background-color: rgba($black,.5);
+      }
+    }
+  }
+
+  p {
+    font-size: 0;
+    text-align: center;
+    padding: 20px;
+    a {
+      margin: 0 5px;
+      display: inline-block;
+      @include case(8px);
+      border-radius: 50%;
+      background-color: $grey;
+      &.o {
+        background-color: $red;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    @include case(100%);
+    border-radius: 5px;
+    vertical-align: middle;
+  }
+
+  .btn {
+    position: absolute;
+    top: 0;
+    height: 67%;
+    margin: 20px 0;
+    width: 21%;
+    opacity: 0;
+    z-index: 10;
+    &.prev {
+      left: 0 !important;
+    }
+    &.next {
+      right: 0 !important;
+    }
+  }
+}

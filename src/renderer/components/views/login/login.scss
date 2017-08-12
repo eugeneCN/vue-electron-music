@@ -1,0 +1,94 @@
+@import "src/renderer/assets/scss/var.scss";
+
+.form {
+  background-color: #fafafa;
+  height: 100%;
+  header {
+    height: 34px;
+  }
+  .bg {
+    background: url('./assets/bg.png') no-repeat;
+    width: 100%;
+    background-size: 100%;
+    height: 150px;
+  }
+  .form-group {
+    margin: 0 auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 5px;
+  }
+
+  .input-group {
+    position: relative;
+    .icon {
+      display: inline-block;
+      @include case(19px);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .phone {
+      background: url('./assets/phone.svg') no-repeat;
+      background-size: 100%;
+      margin: 10px 5px;
+    }
+    .password {
+      background: url('./assets/password.svg') no-repeat;
+      background-size: 100%;
+      margin: 9px 5px;
+    }
+    input {
+      width: 100%;
+      font-size: 12px;
+      border: 1px solid #d9d9d9;
+      border-radius: 5px 5px 0 0;
+      height: 38px;
+      padding-left: 30px;
+    }
+    &:nth-child(2) {
+      input {
+        margin-top: -1px;
+        border-radius: 0 0 5px 5px;
+      }
+      margin-bottom: 20px;
+    }
+  }
+  .button-group {
+    button {
+      font-size: 12px;
+      background-color: #de3f42;
+      border: none;
+      width: 100%;
+      height: 40px;
+      color: #fff;
+      font-size: 15px;
+      &.on {
+        opacity: 0.8;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .tip {
+    color: #de3f42;
+    line-height: 40px;
+    font-size: $font-size-base;
+  }
+}
+.closed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('./assets/clone.svg') no-repeat;
+  background-size: 100%;
+  @include case(12px);
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  margin: 15px;
+  &:active {
+    background-color: rgba(0,0,0,0);
+    box-shadow: none;
+  }
+}

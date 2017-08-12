@@ -1,0 +1,97 @@
+@import "src/renderer/assets/scss/var.scss";
+.bg {
+  @include position-all;
+  z-index: 99;
+}
+.list {
+  position: absolute;
+  height: 450px;
+  width: 575px;
+  box-shadow: 0 -1px 10px rgba(0,0,0,0.5);
+  background-color: #fff;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 65px;
+  z-index: 100;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  header {
+    border-bottom: 1px solid #d9d9d9;
+    height: 77px;
+    .wrap {
+      height: 46px;
+      border: 1px solid $grey-main;
+      background-color: rgba($grey-lighter,.3);
+      border-bottom: 1px solid $grey-light;
+      text-align: center;
+      font-size: 0;
+      span {
+        display: inline-block;
+        width: 108px;
+        margin: 10px 0;
+        @include line-height(24px);
+        background-color: $grey;
+        border-radius: 6px;
+        color: $white;
+        font-size: $font-size-base;
+        text-align: center;
+      }
+      .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: url('./assets/clone.svg') no-repeat;
+        background-size: 100%;
+        @include case(14px);
+        border: 0;
+        padding: 0;
+        border-radius: 0;
+        margin: 16px;
+        &:active {
+          background-color: rgba(0,0,0,0);
+          box-shadow: none;
+        }
+      }
+    }
+    .bars {
+      padding: 0 22px;
+      @include line-height(30px);
+      font-size: $font-size-base;
+      color: $font-light;
+    }
+  }
+  header ~ div {
+    top: 77px;
+    height: 373px;
+  }
+  li {
+    padding: 0 22px;
+    background-color: #fff;
+    @include line-height(30px);
+    font-size: 0;
+    span {
+      font-size: $font-size-base;
+    }
+    .right {
+      float: right;
+    }
+    &:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    &.on {
+      background-color: #e6e6e6;
+      color: $red;
+    }
+  }
+}
+
+.not-data {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  @include line-height(30px);
+  font-size: $font-size-base;
+  margin-top: -50px;
+  color: $grey;
+}

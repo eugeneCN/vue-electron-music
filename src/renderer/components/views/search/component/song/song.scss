@@ -1,0 +1,38 @@
+@import "src/renderer/assets/scss/var.scss";
+.song {
+  li {
+    padding: 10px 30px;
+    a {
+      display: block;
+      @include line-height(40px);
+      text-decoration: none;
+      font-size: 0;
+    }
+    .coverImg {
+      display: inline-block;
+      @include case(40px);
+      background-size: 100%;
+    }
+    .picUrl {
+      @include case(40px);
+      vertical-align: middle;
+      border: 1px solid $grey-lighter;
+    }
+    .name {
+      display: inline-block;
+      font-size: $font-size-head;
+      color: $black;
+      vertical-align: middle;
+      margin: 0 10px;
+    }
+    .album {
+      display: block;
+      margin: 0;
+      font-size: $font-size-base;
+      color: $grey;
+    }
+    &:nth-child(even) {
+      background-color: #f4f4f4;
+    }
+  }
+}

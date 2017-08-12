@@ -1,0 +1,56 @@
+@import "src/renderer/assets/scss/var.scss";
+.pager {
+  text-align: center;
+  font-size: 14px;
+  margin: 30px 0;
+  height: 24px;
+}
+
+.btn-pager {
+  font-size: 0;
+  padding: 0;
+  margin: 0 5px;
+  width: 26px;
+  height: 24px;
+  text-align: center;
+  background-color: #fafafa;
+  color: $black;
+  border: 1px solid $grey-lighter;
+  border-radius: 4px;
+  &:after {
+    content: '';
+    display: inline-block;
+    @include case(10px);
+  }
+  &.prev:after {
+    background: url('./assets/i-left.svg') no-repeat;
+    background-size: 100%;
+  }
+  &.next:after {
+    background: url('./assets/i-right.svg') no-repeat;
+    background-size: 100%;
+  }
+  &:active {
+    box-shadow: none;
+    background-color: #f9f9f9;
+    border-color: $grey-light;
+  }
+}
+
+.page-index {
+  margin: 0 4px;
+  display: inline-block;
+  @include case(24px);
+  line-height: 24px;
+  background-color: #fafafa;
+  cursor: pointer;
+  color: $black;
+}
+
+.active {
+  color: $red;
+  text-decoration: underline;
+}
+.btn[disabled] {
+  border: 1px solid $grey-lighter;
+}

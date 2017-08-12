@@ -1,0 +1,172 @@
+@import "src/renderer/assets/scss/var.scss";
+.playDetail {
+  @include position-all;
+  top: $head-height;
+  bottom: $play-bar-height;
+  z-index: 99;
+  background-color: #fff;
+  transform: translate3d(0, 100%, 0);
+  transition-duration: 400ms;
+  background-color: #fff;
+  &.open {
+    transform: translate3d(0, 0, 0);
+  }
+  .closed {
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 30px 0;
+    @include case(30px);
+    z-index: 200;
+    &:active {
+      &:before {
+        background-color: $grey-main;
+      }
+    }
+    &:before {
+      background-color: $white;
+      border-radius: 10px;
+    }
+    &:after {
+      @include case(30px);
+      display: block;
+      content: '';
+      background: url('./assets/close_3.svg') no-repeat center center;
+      background-size: 20px;
+      position: relative;
+      z-index: 10;
+    }
+  }
+  .background {
+    @include position-all;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-filter: blur(100px);
+    @include scale(0.8);
+    z-index: 1;
+  }
+  .content {
+    @include position-all;
+    z-index: 2;
+    max-width: 1000px;
+    min-width: 860px;
+    width: 860px;
+    margin: 0 auto;
+  }
+
+  .plays-header {
+    overflow: hidden;
+    padding: 30px;
+    margin: 0 auto;
+    .items {
+      float: left;
+      width: 50%;
+    }
+    .pic {
+      @include case(280px);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    .disc {
+      span {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .name {
+        font-size: 20px;
+      }
+      .singer {
+        font-size: $font-size-head;
+      }
+    }
+
+    // 歌词
+    .lyric-holder {
+      overflow: hidden;
+      height: 280px;
+      padding-top: 140px;
+      text-align: center;
+      .lrc-inner {
+        p {
+          margin: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          @include line-height(30px);
+          font-size: $font-size-head;
+          transition: all 0.3s;
+          &.on {
+            color: $red-light;
+            font-size: $font-size-large;
+          }
+        }
+      }
+    }
+
+    .paly-btn {
+      position: relative;
+      text-align: center;
+      margin-top: 80px;
+      button {
+        background-color: transparent;
+        border: none;
+        color: $black;
+        font-size: $font-size-head;
+        padding: 6px 10px 6px 30px;
+        text-align: right;
+        &:active {
+          &:before {
+            background-color: $grey-main;
+          }
+        }
+        &:before {
+          background-color: $white;
+          border-radius: 10px;
+        }
+        &:after {
+          @include case(30px);
+          display: block;
+          content: '';
+          position: relative;
+          z-index: 10;
+          position: absolute;
+          left: 0;
+          top: 0;
+          margin: 2px;
+        }
+        &.like:after {
+          background: url('./assets/like_1.svg') no-repeat center center;
+          background-size: 20px;
+        }
+        &.like.active:after {
+          background: url('./assets/like_2.svg') no-repeat center center;
+          background-size: 21px;
+        }
+        &.collect:after {
+          background: url('./assets/collect.svg') no-repeat center center;
+          background-size: 17px;
+          margin: 0 2px;
+        }
+        &.download:after {
+          background: url('./assets/download.svg') no-repeat center center;
+          background-size: 18px;
+        }
+        &.share:after {
+          background: url('./assets/share_2.svg') no-repeat center center;
+          background-size: 18px;
+        }
+        span {
+          vertical-align: middle;
+          position: relative;
+          z-index: 199;
+        }
+      }
+    }
+  }
+}

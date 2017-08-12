@@ -1,0 +1,46 @@
+@import "src/renderer/assets/scss/var.scss";
+.iTunes {
+  height: 100%;
+  .headers {
+    border-bottom: 1px solid $grey-lighter;
+    height: 52px;
+    line-height: 1;
+    padding-top: 24px;
+    padding-left: 40px;
+    span {
+      font-size: 20px;
+    }
+    small {
+      font-size: $font-size-base;
+      color: $font;
+    }
+  }
+  .content {
+    position: relative;
+    text-align: center;
+    font-weight: 500;
+    width: 300px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -90px;
+    p {
+      color: $font-light;
+      font-size: $font-size-head;
+      margin-bottom: 5px;
+    }
+    a {
+      cursor: pointer;
+      display: inline-block;
+      font-size: $font-size-base;
+      margin: 10px;
+      color: #2b77cd;
+    }
+    img {
+      @include case(68px);
+      margin-bottom: 10px;
+    }
+  }
+}
