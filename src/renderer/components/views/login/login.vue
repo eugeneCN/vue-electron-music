@@ -4,7 +4,7 @@
     <a class="btn closed" @click="closeDialog"></a>
   </header>
   <div class="bg"></div>
-  <div class="form-group">
+  <div class="form-group drag">
     <div class="input-group">
       <input type="text" v-model="form.user" placeholder="请输入手机号">
       <i class="icon phone"></i>
