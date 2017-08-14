@@ -35,6 +35,8 @@ npm run dev
 # 打包成本地应用
 npm run build
 
+# 开启控制台
+Ctrl + Shift + i
 
 ```
 
