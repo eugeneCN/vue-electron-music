@@ -1,9 +1,6 @@
 <template>
-<div class="mu-slider" :class="[sliderClass, styles]" tabindex="0"
-  @focus="handleFocus" @blur="handleBlur" @keydown="handleKeydown"
-  @touchstart="handleTouchStart" @touchend="handleTouchEnd"
-  @touchcancel="handleTouchEnd"  @mousedown="handleMouseDown"
-  @mouseup="handleMouseUp" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+<div class="mu-slider" :class="[sliderClass, styles]" tabindex="0" @focus="handleFocus" @blur="handleBlur" @keydown="handleKeydown" @touchstart="handleTouchStart" @touchend="handleTouchEnd" @touchcancel="handleTouchEnd" @mousedown="handleMouseDown" @mouseup="handleMouseUp"
+  @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
   <input type="hidden" :name="name" :value="inputValue">
   <div class="mu-slider-track"></div>
   <div class="mu-slider-fill" :style="fillStyle"></div>
@@ -12,7 +9,6 @@
 </template>
 
 <script>
-import focusRipple from './focusRipple'
 import keycode from 'keycode'
 export default {
   name: 'mu-slider',
@@ -45,7 +41,7 @@ export default {
       default: false
     }
   },
-  data () {
+  data() {
     return {
       inputValue: this.value || 0,
       active: false,
@@ -55,21 +51,21 @@ export default {
     }
   },
   computed: {
-    percent () {
+    percent() {
       let percentNum = (this.inputValue - this.min) / (this.max - this.min) * 100
       return percentNum > 100 ? 100 : percentNum < 0 ? 0 : percentNum || '0'
     },
-    fillStyle () {
+    fillStyle() {
       return {
         width: this.percent + '%'
       }
     },
-    thumbStyle () {
+    thumbStyle() {
       return {
         left: this.percent + '%'
       }
     },
-    sliderClass () {
+    sliderClass() {
       return {
         // zero: this.inputValue <= this.min,
         active: this.active,
@@ -77,54 +73,54 @@ export default {
       }
     }
   },
-  created () {
+  created() {
     this.handleDragMouseMove = this.handleDragMouseMove.bind(this)
     this.handleMouseEnd = this.handleMouseEnd.bind(this)
     this.handleTouchMove = this.handleTouchMove.bind(this)
     this.handleTouchEnd = this.handleTouchEnd.bind(this)
   },
   methods: {
-    handleKeydown (e) {
+    handleKeydown(e) {
       const { min, max, step } = this
       let action
       switch (keycode(e)) {
-      case 'page down':
-      case 'down':
-        action = 'decrease'
-        break
-      case 'left':
-        action = 'decrease'
-        break
-      case 'page up':
-      case 'up':
-        action = 'increase'
-        break
-      case 'right':
-        action = 'increase'
-        break
-      case 'home':
-        action = 'min'
-        break
-      case 'end':
-        action = 'max'
-        break
+        case 'page down':
+        case 'down':
+          action = 'decrease'
+          break
+        case 'left':
+          action = 'decrease'
+          break
+        case 'page up':
+        case 'up':
+          action = 'increase'
+          break
+        case 'right':
+          action = 'increase'
+          break
+        case 'home':
+          action = 'min'
+          break
+        case 'end':
+          action = 'max'
+          break
       }
 
       if (action) {
         e.preventDefault()
         switch (action) {
-        case 'decrease':
-          this.inputValue -= step
-          break
-        case 'increase':
-          this.inputValue += step
-          break
-        case 'min':
-          this.inputValue = min
-          break
-        case 'max':
-          this.inputValue = max
-          break
+          case 'decrease':
+            this.inputValue -= step
+            break
+          case 'increase':
+            this.inputValue += step
+            break
+          case 'min':
+            this.inputValue = min
+            break
+          case 'max':
+            this.inputValue = max
+            break
         }
 
         this.inputValue = parseFloat(this.inputValue.toFixed(5))
@@ -136,7 +132,7 @@ export default {
         }
       }
     },
-    handleMouseDown (e) {
+    handleMouseDown(e) {
       if (this.disabled) return
       this.setValue(e)
       e.preventDefault()
@@ -145,11 +141,11 @@ export default {
       this.$el.focus()
       this.onDragStart(e)
     },
-    handleMouseUp () {
+    handleMouseUp() {
       if (this.disabled) return
       this.active = false
     },
-    handleTouchStart (e) {
+    handleTouchStart(e) {
       if (this.disabled) return
       this.setValue(e.touches[0])
 
@@ -161,7 +157,7 @@ export default {
       e.preventDefault()
       this.onDragStart(e)
     },
-    handleTouchEnd (e) {
+    handleTouchEnd(e) {
       if (this.disabled) return
       document.removeEventListener('touchmove', this.handleTouchMove)
       document.removeEventListener('touchup', this.handleTouchEnd)
@@ -169,24 +165,24 @@ export default {
       document.removeEventListener('touchcancel', this.handleTouchEnd)
       this.onDragStop(e)
     },
-    handleFocus () {
+    handleFocus() {
       if (this.disabled) return
       this.focused = true
     },
-    handleBlur () {
+    handleBlur() {
       if (this.disabled) return
       this.focused = false
     },
-    handleMouseEnter () {
+    handleMouseEnter() {
       if (this.disabled) return
       this.hover = true
     },
-    handleMouseLeave () {
+    handleMouseLeave() {
       if (this.disabled) return
       this.hover = false
     },
     // 从点击位置更新 value
-    setValue (e) {
+    setValue(e) {
       const { $el, max, min, step } = this
       let value = (e.clientX - $el.getBoundingClientRect().left) / $el.offsetWidth * (max - min)
       value = Math.round(value / step) * step + min
@@ -201,13 +197,13 @@ export default {
       this.$emit('change', value)
     },
     // 拖拽控制
-    onDragStart (e) {
+    onDragStart(e) {
       this.dragging = true
       this.active = true
       this.$emit('dragStart', e)
       this.$emit('drag-start', e)
     },
-    onDragUpdate (e) {
+    onDragUpdate(e) {
       if (this.dragRunning) return
       this.dragRunning = true
       window.requestAnimationFrame(() => {
@@ -215,19 +211,19 @@ export default {
         if (!this.disabled) this.setValue(e)
       })
     },
-    onDragStop (e) {
+    onDragStop(e) {
       this.dragging = false
       this.active = false
       this.$emit('dragStop', e)
       this.$emit('drag-stop', e)
     },
-    handleDragMouseMove (e) {
+    handleDragMouseMove(e) {
       this.onDragUpdate(e)
     },
-    handleTouchMove (e) {
+    handleTouchMove(e) {
       this.onDragUpdate(e.touches[0])
     },
-    handleMouseEnd (e) {
+    handleMouseEnd(e) {
       document.removeEventListener('mousemove', this.handleDragMouseMove)
       document.removeEventListener('mouseup', this.handleMouseEnd)
       this.onDragStop(e)
@@ -237,14 +233,14 @@ export default {
     thumbStyle(a, b) {
       // console.log(a)
     },
-    value (val) {
+    value(val) {
       this.inputValue = val
     },
-    inputValue (val) {
+    inputValue(val) {
       this.$emit('input', val)
     }
   },
-  components: { focusRipple }
+  components: {}
 }
 </script>
 
