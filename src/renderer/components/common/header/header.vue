@@ -5,14 +5,14 @@
   <!-- logo E -->
 
   <!-- toback S -->
-  <div class="toback">
+  <div class="toback drag">
     <a @click="routerGo('back')" class="to-left radius-border" :class="{ 'active' : backStatus } "></a>
     <a @click="routerGo('forward')" class="to-right radius-border" :class="{ 'active' : forwardStatus }"></a>
   </div>
   <!-- toback E -->
 
   <!-- search S -->
-  <div class="search">
+  <div class="search drag">
     <div class="input-rows">
       <input type="text" v-model="keywords" @keyup.enter="search(keywords)" id="search" placeholder='搜索音乐，歌手，歌词，用户'>
       <i class="icon iconfont icon-sousuo"></i>
@@ -21,7 +21,7 @@
   <!-- search E -->
 
   <!-- useravatar S -->
-  <div class="useravatar">
+  <div class="useravatar drag">
     <div class="avatar" v-if="!user.userId">
       <a href="javascript:;" class="dropdown" @click="login">
         <i class="default"></i>
