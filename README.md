@@ -18,6 +18,9 @@
 
 ``` bash
 
+# 克隆项目
+git clone https://github.com/eugeneCN/vue-electron-music.git
+
 # 安装依赖
 npm install
 
