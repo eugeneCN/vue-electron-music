@@ -37,4 +37,4 @@ npm run build
 
 ## 鸣谢
 
-此应用提供的API: [https://api.imjad.cn/cloudmusic/](https://api.imjad.cn/cloudmusic/) ,此接口的说明请到这里[查看](https://api.imjad.cn/cloudmusic/index.html)
+此应用提供的API: [https://github.com/Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) ,此接口的说明请到这里[查看](https://binaryify.github.io/NeteaseCloudMusicApi/#/)
