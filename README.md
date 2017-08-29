@@ -12,6 +12,11 @@
 - SCSS
 - 更多...
 
+## 图片预览
+![](https://github.com/eugeneCN/vue-electron-music/blob/master/doc/3872766167-5999ac798b713_articlex.png)
+![](https://github.com/eugeneCN/vue-electron-music/blob/master/doc/3913213729-5999ac98a8c6c_articlex.jpeg)
+![](https://github.com/eugeneCN/vue-electron-music/blob/master/doc/1588237435-599597952042d_articlex.jpeg)
+
 ## 安装运行（Build Setup）
 
 > 确保项目正常运行，请将你的node版本升级为7.0+以上，低版本node没有测试过。
