@@ -144,10 +144,7 @@ if (process.env.NODE_ENV === 'production') {
   rendererConfig.devtool = ''
 
   rendererConfig.plugins.push(
-    new BabiliWebpackPlugin({
-      removeConsole: true,
-      removeDebugger: true
-    }),
+    new BabiliWebpackPlugin(),
     new CopyWebpackPlugin([{
       from: path.join(__dirname, '../static'),
       to: path.join(__dirname, '../dist/electron/static'),

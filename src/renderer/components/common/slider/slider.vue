@@ -84,43 +84,43 @@ export default {
       const { min, max, step } = this
       let action
       switch (keycode(e)) {
-        case 'page down':
-        case 'down':
-          action = 'decrease'
-          break
-        case 'left':
-          action = 'decrease'
-          break
-        case 'page up':
-        case 'up':
-          action = 'increase'
-          break
-        case 'right':
-          action = 'increase'
-          break
-        case 'home':
-          action = 'min'
-          break
-        case 'end':
-          action = 'max'
-          break
+      case 'page down':
+      case 'down':
+        action = 'decrease'
+        break
+      case 'left':
+        action = 'decrease'
+        break
+      case 'page up':
+      case 'up':
+        action = 'increase'
+        break
+      case 'right':
+        action = 'increase'
+        break
+      case 'home':
+        action = 'min'
+        break
+      case 'end':
+        action = 'max'
+        break
       }
 
       if (action) {
         e.preventDefault()
         switch (action) {
-          case 'decrease':
-            this.inputValue -= step
-            break
-          case 'increase':
-            this.inputValue += step
-            break
-          case 'min':
-            this.inputValue = min
-            break
-          case 'max':
-            this.inputValue = max
-            break
+        case 'decrease':
+          this.inputValue -= step
+          break
+        case 'increase':
+          this.inputValue += step
+          break
+        case 'min':
+          this.inputValue = min
+          break
+        case 'max':
+          this.inputValue = max
+          break
         }
 
         this.inputValue = parseFloat(this.inputValue.toFixed(5))
